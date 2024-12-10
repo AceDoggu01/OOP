@@ -46,22 +46,69 @@
                 </div>
             </div>
         </section>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <h1>Barbershop Appointment</h1>
-                    <button onclick="confirmAppointment()">Book Appointment</button>
-                    <p id="output" class="confirmation"></p>
-                    <script>
-                    function confirmAppointment() {
-                        const now = new Date();
-                        const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                        document.getElementById('output').innerHTML =
-                        `Your appointment is confirmed at <span class="time">${time}</span>`;
-                    }
-                </script>
+
+
+        <!-- Booking Section -->
+        <section class="container my-5">
+            <div class="row">
+                <!-- Left Column: Barbers -->
+                <div class="col-md-6 border-end">
+                    <h2 class="text-center mb-4">Select Your Barber</h2>
+                    <div class="barber-list">
+                        <!-- Barber 1 -->
+                        <div class="barber-item d-flex align-items-center mb-3">
+                            <img src="pictures/barber1.jpg" alt="Barber 1" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px;">
+                            <div>
+                                <h5>John Doe</h5>
+                                <p>Specialist in fades and trims</p>
+                            </div>
+                        </div>
+                        <!-- Barber 2 -->
+                        <div class="barber-item d-flex align-items-center mb-3">
+                            <img src="pictures/barber2.jpg" alt="Barber 2" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px;">
+                            <div>
+                                <h5>Mark Smith</h5>
+                                <p>Expert in beard styling</p>
+                            </div>
+                        </div>
+                        <!-- Barber 3 -->
+                        <div class="barber-item d-flex align-items-center mb-3">
+                            <img src="pictures/barber3.jpg" alt="Barber 3" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px;">
+                            <div>
+                                <h5>Jane Williams</h5>
+                                <p>Haircuts for all occasions</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Right Column: Schedule -->
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">Select a Date & Time</h2>
+                    <form id="booking-form">
+                        <!-- Appointment Date -->
+                        <div class="form-group mb-3">
+                            <label for="appointment-date">Date:</label>
+                            <input type="date" id="appointment-date" class="form-control" required>
+                        </div>
+                        <!-- Appointment Time -->
+                        <div class="form-group mb-3">
+                            <label for="appointment-time">Time:</label>
+                            <input type="time" id="appointment-time" class="form-control" min="09:00" max="18:00" required>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Book Now Button -->
+            <div class="text-center mt-4">
+                <button class="btn btn-primary px-5" id="book-now-btn">Book Now</button>
+            </div>
+
+            <!-- Confirmation Message -->
+            <div id="confirmation-message" class="text-center mt-3 text-success" style="display: none;">
+                Your appointment has been booked successfully!
             </div>
         </section>
     </body>
-</html>
+</html>     

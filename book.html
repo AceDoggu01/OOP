@@ -52,6 +52,8 @@
             <div class="container pt-5">
                 <h1>Schedule Appointment</h1>
                 <form id="form">
+
+                    <!-- name row -->
                     <div class="row">
                         <div class="col-md-5 p-2">
                             <div class="form-group">
@@ -67,6 +69,7 @@
                         </div>
                     </div>
 
+                    <!-- Information data -->
                     <div class="row">
                         <div class="col-md-5 p-2">
                             <div class="form-group">
@@ -82,27 +85,25 @@
                         </div>    
                     </div> 
 
+                    <!-- Service Selection -->
                     <div class="row">
                         <div class="col-md-5 p-2">
-                            <!-- <label for="appointment">Appointment</label>
-                            <input type="date" id="appointment" required> -->
-                            <form action="/submit-appointment" method="POST">
-                            <label for="appointmentdate">Appointment date:</label>
-                            <input type="date" id="appointmentdate" name="appointment-date" required>
-                            <br><br>
-                        </div>
-                        <div class="col-md-5 p-2">
-                            <label for="appointment-time">Appointment Time:</label>
-                            <input type="time" id="appointmenttime" name="appointment-time" min="09:00" max="18:00" required>
+                            <div class="form-group">
+                                <label for="service">Select Service</label>
+                                <select id="service" required>
+                                    <option value="">--Select Service--</option>
+                                    <option value="Haircut">Haircut</option>
+                                    <option value="Shave">Shave</option>
+                                    <option value="Haircut & Shave">Haircut & Shave</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <p id="error" class="text-bg-danger"></p>  
                     <button class="costom-button nav-link" id="button" type="submit" >Next</button>
                 </form> 
-                
             </div>
         </section>
-
         <script src="booking.js"></script>
     </body>
 </html>
